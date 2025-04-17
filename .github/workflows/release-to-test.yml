@@ -66,14 +66,6 @@ jobs:
         name: managedSolutions
         path: ${{ env.solution_release_folder }}
 
-    - name: Install Required Dependencies
-      uses: microsoft/powerplatform-actions/who-am-i@0.4.0
-      with:
-       environment-url: ${{secrets.PowerPlatformTestUrl}}
-       user-name: ${{secrets.PowerPlatformAppID}}
-       password-secret: ${{ secrets.PowerPlatformClientSecret }}
-
-
     # Import the managed solution into the target test environment
     - name: Import Solution to Test Environment
       uses: microsoft/powerplatform-actions/import-solution@0.4.0
